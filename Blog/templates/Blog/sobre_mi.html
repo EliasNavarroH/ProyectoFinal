@@ -1,0 +1,29 @@
+{% extends 'Blog/base.html' %}
+
+{% block titulo%} Sobre Mi {% endblock titulo%}
+
+{% block subtitulo%}
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-5">Sobre Mi</h1>
+    </div>
+  </div>
+{% endblock subtitulo%}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-3">
+      <img alt="Imagen de Perfil">
+    </div>
+    <div class="col-md-9">
+      <p>Edad:{{27}}</p>
+      <p>País:Argentina</p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <a class="btn btn-primary" href="{% url 'inicio' %}">Volver a la Página Principal</a>
+    </div>
+  </div>
+{% endblock content %}
