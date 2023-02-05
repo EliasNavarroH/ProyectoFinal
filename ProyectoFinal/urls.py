@@ -16,7 +16,8 @@ Including another URLconf
 from django.urls import path
 from Blog.views import CreateEntradaDeBlog, EditEntradaDeBlog, DeleteEntradaDeBlog, inicio, AboutMe, EntradaDeBlog
 from Blog.admin import admin
-from Usuarios.views import LoginView,LogoutView
+from Usuarios.views import UsuarioLoginView, LogoutView
+from RegistroUsuario.views import UsuarioRegisterView
 
 urlpatterns = [
     path('create/', CreateEntradaDeBlog.as_view(), name='create_entrada_blog'),
@@ -26,6 +27,7 @@ urlpatterns = [
     path('', inicio, name='inicio'),
     path('about-me/', AboutMe, name='sobre_mi'),
     path('admin/', admin.site.urls),
-    path('login', LoginView.as_view(), name='login'),
-    path('templates/Usuarios/login.html', LogoutView.as_view(), name='logout'),   
+    path('login', UsuarioLoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(next_page='login'),name='logout'),
+    path('signup/', UsuarioRegisterView.as_view(), name='signup'),
 ]
