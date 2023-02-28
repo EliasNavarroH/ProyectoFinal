@@ -37,6 +37,6 @@ class LoginView(TemplateView):
 
 class ProfileView(LoginRequiredMixin, UpdateView):
     model = Profile
-    fields = ['User','Nombre', 'Apellido','Edad'] # Add fields for user profile here
+    fields = ['User','Nombre', 'Apellido','Edad'] 
     template_name = 'Usuarios/profile.html'
     success_url = reverse_lazy('inicio')

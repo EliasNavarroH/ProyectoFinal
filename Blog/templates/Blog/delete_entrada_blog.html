@@ -2,7 +2,7 @@
 
 {% block content %}
   <h2>Estas seguro que quieres eliminar esta entrada/?</h2>
-  <form action="{% url 'delete_entrada_blog' entrada.pk %}" method="post">
+  <form action="{% url 'delete_entrada_blog' entrada.id%}" method="post">
     {% csrf_token %}
     <input type="submit" value="Delete">
     <a href="{% url 'lista_entradas_de_blog' %}">Cancel</a>

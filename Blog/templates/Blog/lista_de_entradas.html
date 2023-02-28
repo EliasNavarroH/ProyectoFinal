@@ -18,9 +18,12 @@
         </div>
         {% if user.is_authenticated %}
           <div class="btn-group">
-            <a class="btn btn-secondary" href="{% url 'edit_entrada_blog' entrada.id %}">Editar</a>
+            <a class="btn btn-secondary" href="{% url 'edit_entrada_blog' pk=entrada.id %}">Editar</a>
+            <br>
+            <br>
             <a class="btn btn-danger" href="{% url 'delete_entrada_blog' entrada.id %}">Eliminar</a>
           </div>
+        
         {% endif %}
       </div>
     {% endfor %}
@@ -30,4 +33,9 @@
       <a href="{% url 'create_entrada_blog' %}">Crear entrada</a>
     {% endif %}
   {% endif %}
+  <div>
+    <p>
+      <a class="btn btn-secondary" href="{% url 'create_entrada_blog' %}">Crear</a>
+    </p>
+  </div>
 {% endblock content%}
